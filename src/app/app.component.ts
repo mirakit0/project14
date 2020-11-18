@@ -14,7 +14,7 @@ import { HttpWorkerService } from './shared/services/http-worker.service';
 export class AppComponent implements OnInit {
 
   title = 'Список сотрудников';
-  workers: MyWorker[];
+  workers: MyWorker[]=[];
   myWorkerType = MyWorkerType;
 
   constructor(
