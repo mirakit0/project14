@@ -28,8 +28,21 @@ export class TableWorkersComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  fillForm(worker: MyWorker): void {
+    this.workerForm.setValue(this.dataFrom(worker));
   }
+
+
+  dataFrom(obj: MyWorker): MyWorker {
+    return {
+        name: obj.name,
+        surname: obj.surname,
+        number: obj.number,
+        type: obj.type,
+    };
+}
 
   onDeleteWorker(id: number) {
     this.deleteWorker.emit(id);

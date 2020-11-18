@@ -28,14 +28,14 @@
               <div class="row">
                 <div class="col">
                   <div ngbDropdown class="d-block">
-                    <button class="btn btn-outline-primary" id="dropdownForm1" ngbDropdownToggle>
+                    <button class="btn btn-outline-primary" id="dropdownForm1" (click)="fillForm(worker)" ngbDropdownToggle>
                       Редактировать
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownForm1">
                       <form [formGroup]="workerForm" (ngSubmit)="onChangeWorker(worker)" class="px-2 py-1">
                         <div class="form-group">
                           <label for="name">Имя</label>
-                          <input type="text"  class="form-control"  formControlName="name" placeholder="Имя" value="{{worker.name}}"/> 
+                          <input type="text"  class="form-control"  formControlName="name" placeholder="Имя"/> 
                           <div class="alert alert-danger"
                             *ngIf="workerForm.controls['name'].invalid && workerForm.controls['name'].touched">
                             Не указано имя
